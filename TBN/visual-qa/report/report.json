@@ -1,0 +1,26 @@
+{
+  "date": "2025-10-28T02:54:58.287Z",
+  "results": [
+    {
+      "viewport": "desktop",
+      "diffPercent": 94.31813271604939,
+      "expected": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/expected_desktop.png",
+      "actual": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/actual_desktop.png",
+      "diff": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/diff_desktop.png"
+    },
+    {
+      "viewport": "tablet",
+      "diffPercent": 91.9219970703125,
+      "expected": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/expected_tablet.png",
+      "actual": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/actual_tablet.png",
+      "diff": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/diff_tablet.png"
+    },
+    {
+      "viewport": "mobile",
+      "diffPercent": 87.22627257799671,
+      "expected": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/expected_mobile.png",
+      "actual": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/actual_mobile.png",
+      "diff": "/Users/hrushikeshgangala/Downloads/moonbase_er-main/framer-site/visual-qa/report/diff_mobile.png"
+    }
+  ]
+}

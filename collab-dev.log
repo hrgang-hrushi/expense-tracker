@@ -1,0 +1,35 @@
+
+> collab-editor@0.1.0 dev
+> vite --host
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+  VITE v5.4.21  ready in 467 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.1.71:5173/
+  ➜  press h + enter to show help
+11:37:46 AM [vite] hmr update /src/styles/index.css
+11:37:55 AM [vite] hmr update /src/components/Editor.tsx, /src/styles/index.css
+11:38:04 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:38:26 AM [vite] hmr update /src/styles/index.css
+11:38:26 AM [vite] hmr update /src/styles/index.css
+11:38:27 AM [vite] hmr update /src/components/Editor.tsx, /src/styles/index.css
+11:38:27 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:41:34 AM [vite] hmr update /src/components/Editor.tsx, /src/styles/index.css
+11:41:36 AM [vite] hmr update /src/components/Editor.tsx, /src/styles/index.css
+11:41:36 AM [vite] ✨ new dependencies optimized: @codemirror/view
+11:41:36 AM [vite] ✨ optimized dependencies changed. reloading
+11:46:11 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:46:12 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:46:13 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:46:13 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:46:21 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:46:32 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:46:32 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:47:09 AM [vite] hmr update /src/App.tsx, /src/styles/index.css
+11:47:10 AM [vite] hmr update /src/App.tsx, /src/styles/index.css
+11:49:37 AM [vite] hmr update /src/App.tsx, /src/styles/index.css
+11:49:53 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:52:56 AM [vite] hmr update /src/components/BottomToolbar.tsx, /src/styles/index.css
+11:52:56 AM [vite] hmr update /src/App.tsx, /src/styles/index.css

@@ -1,0 +1,30 @@
+/* FAQ Section - Two Column Grid Layout */
+.faq{margin-top:110px}
+.faq-header{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:40px}
+.faq-header > div{flex:1}
+.faq-header h2{margin:0 0 8px 0;font-size:42px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;color:#fff}
+.faq-header p{margin:0;font-size:16px;line-height:1.5;color:rgba(255,255,255,0.6);max-width:600px}
+
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.faq-item{border:1px solid rgba(255,255,255,0.08);border-right:0;border-bottom:0;padding:32px;transition:background .2s ease}
+.faq-item:nth-child(2n){border-right:1px solid rgba(255,255,255,0.08)}
+.faq-item:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,0.08)}
+
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:0;padding:0;color:#fff;font-size:18px;font-weight:500;text-align:left;cursor:pointer}
+.faq-icon{color:#00FFB2;font-size:24px;font-weight:400;flex:0 0 24px;transition:transform .2s ease}
+.faq-item--open .faq-icon{transform:rotate(45deg)}
+
+.faq-answer{margin-top:16px;color:rgba(255,255,255,0.7);line-height:1.6;font-size:15px}
+.faq-answer p{margin:0}
+
+@media(max-width: 960px){
+  .faq-grid{grid-template-columns:1fr}
+  .faq-item{border-right:1px solid rgba(255,255,255,0.08) !important}
+  .faq-header{flex-direction:column;gap:20px}
+}
+
+@media(max-width: 720px){
+  .faq{margin-top:80px}
+  .faq-header h2{font-size:36px}
+  .faq-item{padding:24px}
+}

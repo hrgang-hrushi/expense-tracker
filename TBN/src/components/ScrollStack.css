@@ -1,0 +1,7 @@
+.scroll-stack-scroller{position:relative;width:100%;height:100%;overflow-y:auto;overflow-x:visible;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;-webkit-transform:translateZ(0);transform:translateZ(0);will-change:scroll-position}
+.scroll-stack-scroller.window-scroll{overflow:visible;height:auto}
+.scroll-stack-inner{padding:20vh 0 40rem;min-height:100vh}
+.scroll-stack-scroller.window-scroll .scroll-stack-inner{padding:12vh 0 36rem}
+.scroll-stack-card{transform-origin:top center;will-change:transform,filter;backface-visibility:hidden;transform-style:preserve-3d;box-sizing:border-box;-webkit-transform:translateZ(0);transform:translateZ(0);position:relative;pointer-events:none}
+.scroll-stack-card[data-top="true"]{pointer-events:auto}
+.scroll-stack-end{width:100%;height:1px}

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+/* Code fonts for the editor */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Source+Code+Pro:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Light / Dark surface tokens */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+}
+.dark {
+  --bg: #0b1220;
+  --surface: #071029;
+}
+
+body {
+  background-color: var(--bg);
+  /* Use Inter with a sensible system fallback stack */
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CodeMirror dark adjustments: ensure the editor canvas and gutters follow the dark theme */
+.dark .cm-editor {
+  background: var(--surface) !important; /* dark surface */
+  color: #e6eef8 !important;
+}
+.dark .cm-scroller {
+  background: transparent !important;
+}
+.dark .cm-content {
+  color: #e6eef8;
+}
+.dark .cm-gutters {
+  background: #000000 !important;
+  color: #94a3b8 !important;
+  border-right: 1px solid rgba(255,255,255,0.03);
+}
+.dark .cm-gutterElement {
+  color: #94a3b8;
+}
+.dark .cm-lineNumbers .cm-gutterElement {
+  color: #94a3b8;
+}
+.dark .cm-cursor {
+  border-left: 2px solid #7dd3fc !important;
+}
+.dark .cm-activeLine {
+  background: rgba(125,211,252,0.03);
+}
+.dark .cm-selectionBackground,
+.dark .cm-selectionLayer {
+  background: rgba(125,211,252,0.08) !important;
+}
+
+/* simple fade-in animation for cursors/selections */
+.fade-in {
+  animation: fadeIn 180ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

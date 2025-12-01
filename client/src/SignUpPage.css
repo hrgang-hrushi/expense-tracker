@@ -1,0 +1,220 @@
+.signup-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+    color: white;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.signup-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.signup-page-header {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+.back-to-dashboard {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-to-dashboard:hover {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: #60a5fa;
+    transform: translateY(-2px);
+}
+
+.mission-info h1 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.mission-info p {
+    font-size: 18px;
+    color: #94a3b8;
+    margin: 0;
+    font-weight: 300;
+}
+
+.signup-page-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.mission-details {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    border: 2px solid #1e293b;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.mission-details::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #60a5fa, #a78bfa, #60a5fa);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0.3;
+    animation: pulse 4s infinite;
+}
+
+.mission-details h3 {
+    margin: 0 0 25px 0;
+    font-size: 24px;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.details-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 8px;
+    border-left: 3px solid #60a5fa;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    background: rgba(15, 23, 42, 0.8);
+    transform: translateX(5px);
+}
+
+.detail-item strong {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.detail-item span {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.signup-page-footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(30, 41, 59, 0.5);
+    color: #64748b;
+    font-size: 14px;
+}
+
+.signup-page-footer p {
+    margin: 5px 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 768px) {
+    .signup-page-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 20px;
+    }
+    
+    .mission-info h1 {
+        font-size: 36px;
+    }
+    
+    .mission-info p {
+        font-size: 16px;
+    }
+    
+    .mission-details {
+        padding: 20px;
+    }
+    
+    .mission-details h3 {
+        font-size: 20px;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .detail-item:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-page-header {
+        padding: 15px;
+    }
+    
+    .mission-info h1 {
+        font-size: 28px;
+    }
+    
+    .mission-details {
+        padding: 15px;
+    }
+    
+    .detail-item {
+        padding: 12px;
+    }
+}
