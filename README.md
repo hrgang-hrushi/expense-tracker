@@ -6,3 +6,4 @@ It serves as a foundation for future features, backend integration, and UI desig
 ---
 
 Made by Team Alpha Beta Gamma# smart-recycling-detector
+# smart-recycling-detector
