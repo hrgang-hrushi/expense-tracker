@@ -6,6 +6,7 @@ import Contact from './components/Contact'
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import OAuth2Callback from './pages/OAuth2Callback'
+import AppwriteDebug from './components/AppwriteDebug'
 
 export default function App(){
   return (
@@ -17,6 +18,7 @@ export default function App(){
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/oauth2callback" element={<OAuth2Callback />} />
+          <Route path="/debug" element={<AppwriteDebug />} />
         </Routes>
         <Footer />
       </Router>

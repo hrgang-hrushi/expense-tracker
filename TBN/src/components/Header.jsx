@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { startGoogleAuth } from '../lib/oauth'
 
 export default function Header(){
   const navigate = useNavigate()
@@ -42,15 +43,11 @@ export default function Header(){
           <a
             className="cta"
             href="#"
-            onClick={(e) => {
-              e.preventDefault()
-              const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || ''
-              if (!clientId) return window.location.href = '/signup'
-              const redirect = encodeURIComponent(window.location.origin + '/oauth2callback')
-              const scope = encodeURIComponent('openid email profile')
-              const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirect}&response_type=id_token&scope=${scope}&prompt=select_account`
-              window.location.href = url
-            }}
+            onClick={async (e) => {
+                e.preventDefault()
+                const ok = await startGoogleAuth()
+                if (!ok) window.location.href = '/signup'
+              }}
           >
             Get started
           </a>

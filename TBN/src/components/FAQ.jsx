@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { startGoogleAuth } from '../lib/oauth'
 
 export default function FAQ(){
   const [openIndex, setOpenIndex] = useState(null)
@@ -48,7 +49,7 @@ export default function FAQ(){
           <h2>Your Questions, Answered</h2>
           <p>Find everything you need to know about TBN, from security to supported features.</p>
         </div>
-        <a className="link-accent" href="/contact-us">
+  <a className="link-accent" href="/signup" onClick={async (e) => { e.preventDefault(); const ok = await startGoogleAuth(); if (!ok) window.location.href = '/signup' }}>
           Create account now
           <svg className="icon-ne" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: 6 }}>
             <path d="M4.16675 10H15.8334M15.8334 10L10.0001 4.16669M15.8334 10L10.0001 15.8334" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
