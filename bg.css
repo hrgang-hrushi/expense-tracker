@@ -1,0 +1,21 @@
+/* Background canvas container for Color Bends style shader */
+#bg-root{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  pointer-events:none; /* let page interactions pass through */
+  /* fallback gradient (visible if shader fails) */
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(255, 255, 255, 0.08), transparent 20%),
+              radial-gradient(900px 500px at 80% 80%, rgba(59, 53, 53, 0.716), transparent 18%),
+              linear-gradient(180deg, rgba(48, 44, 44, 0.6), rgba(81, 76, 76, 0.6));
+}
+
+/* Ensure main content sits above the shader */
+.container{position:relative;z-index:1}
+
+/* Small performance: limit canvas size on very small screens */
+@media (max-width:420px){
+  #bg-root canvas{image-rendering:optimizeQuality}
+}
