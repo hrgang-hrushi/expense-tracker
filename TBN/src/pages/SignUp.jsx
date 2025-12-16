@@ -1,99 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import { startGoogleAuth } from '../lib/oauth'
-import { useLocation } from 'react-router-dom'
-
-function ContactForm({ onDone }) {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [location, setLocation] = useState('')
-  const [loading, setLoading] = useState(false)
-  const API_BASE = import.meta.env.VITE_API_BASE || ''
-
-  async function submit(e) {
-    e && e.preventDefault()
-    if (!email) return alert('Please enter an email')
-    setLoading(true)
-    try {
-      const res = await fetch(`${API_BASE}/api/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, location }),
-      })
-      if (res.ok) {
-        alert('Thanks — we received your message. We will reach out soon.')
-        setName('')
-        setEmail('')
-        setLocation('')
-        onDone && onDone()
-      } else {
-        const j = await res.json().catch(() => null)
-        console.error('Contact failed', j)
-        alert('Submission failed')
-      }
-    } catch (err) {
-      console.error(err)
-      alert('Submission failed')
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  return (
-    <form onSubmit={submit} style={{ display: 'grid', gap: 8, marginTop: 12 }}>
-      <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} />
-      <div style={{ display: 'flex', gap: 8 }}>
-        <button className="cta" type="submit" disabled={loading}>{loading ? 'Sending…' : 'Submit'}</button>
-      </div>
-    </form>
-  )
-}
+import React, { useMemo } from 'react'
+import GoogleAuthButton from '../components/GoogleAuthButton'
 
 export default function SignUp(){
-  const location = useLocation()
-  const qs = new URLSearchParams(location.search)
-  const authed = qs.get('authed') === '1'
-  const [showContact, setShowContact] = useState(false)
+  const env = import.meta.env || {}
+  const appwriteProject = env.VITE_APPWRITE_PROJECT_ID || ''
+  const googleClient = env.VITE_GOOGLE_CLIENT_ID || ''
+  const successUrl = typeof window !== 'undefined' ? window.location.origin + '/oauth2callback' : '/oauth2callback'
 
-  useEffect(() => {
-    if (!authed) return
-    // scroll to top so user sees the success message
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [authed])
+  const flow = useMemo(() => appwriteProject ? 'Appwrite OAuth' : (googleClient ? 'Direct Google' : 'None (no client configured)'), [appwriteProject, googleClient])
 
   return (
     <div className="signup-page" style={{ maxWidth: 640, margin: '40px auto', padding: 20 }}>
       <h2 style={{ textAlign: 'center' }}>Create an account</h2>
       <p style={{ textAlign: 'center' }}>Sign up quickly using Google.</p>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
-        <button
-          className="auth-btn"
-          onClick={async () => {
-            const ok = await startGoogleAuth()
-            if (!ok) window.alert('Google client ID not configured. Please set VITE_GOOGLE_CLIENT_ID in .env')
-          }}
-          style={{ padding: '12px 22px', fontSize: 16 }}
-        >
-          Continue with Google
-        </button>
+      {/* Debug banner: shows which auth flow will be used and the redirect URL */}
+      <div style={{ margin: '16px 0', padding: 12, borderRadius: 8, background: '#0b1220', color: '#d6e6ff', fontSize: 13 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, alignItems: 'center' }}>
+          <div>
+            <strong style={{ display: 'block', marginBottom: 4 }}>Auth flow</strong>
+            <div style={{ color: '#bcd3ff' }}>{flow}</div>
+          </div>
+          <div>
+            <strong style={{ display: 'block', marginBottom: 4 }}>Redirect URL</strong>
+            <div style={{ color: '#bcd3ff', maxWidth: 360, overflowWrap: 'anywhere' }}>{successUrl}</div>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+            <div style={{ fontSize: 12, color: '#9fb7ff' }}>Appwrite project: {appwriteProject ? 'yes' : 'no'}</div>
+            <div style={{ fontSize: 12, color: '#9fb7ff' }}>Google client id: {googleClient ? 'yes' : 'no'}</div>
+          </div>
+        </div>
       </div>
 
-      {authed && (
-        <div style={{ marginTop: 28, padding: 16, border: '1px solid #e6e6e6', borderRadius: 8, background: '#f9fff6' }}>
-          <h3 style={{ marginTop: 0 }}>Signed up successfully 🎉</h3>
-          <p>Was this sign up to contact us?</p>
-          {!showContact ? (
-            <div style={{ display: 'flex', gap: 8 }}>
-              <button className="cta" onClick={() => setShowContact(true)}>Contact us</button>
-              <button onClick={() => window.location.href = '/'}>No thanks</button>
-            </div>
-          ) : (
-            <ContactForm onDone={() => { setShowContact(false); window.location.href = '/' }} />
-          )}
-        </div>
-      )}
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 12 }}>
+        <GoogleAuthButton />
+      </div>
     </div>
   )
 }

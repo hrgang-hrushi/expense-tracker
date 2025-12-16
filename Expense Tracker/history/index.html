@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Expense History</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .page-wrap{max-width:1100px;margin:40px auto;padding:18px}
+    .history-heading{font-size:28px;margin-bottom:8px}
+    .small-muted{color:rgba(255,255,255,0.6);margin-bottom:18px}
+    .download-btn{background:#fff;color:#111;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="left">GANGALA'S EXPENSE TRACKER</div>
+      <div class="center">
+        <nav class="main-nav">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/history" class="nav-link active">History</a>
+        </nav>
+      </div>
+      <div class="right"></div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <h1 class="history-heading">Recent History</h1>
+    <p class="small-muted">All expenses saved locally or submitted to the sheet. This view reads your browser localStorage.</p>
+
+    <div style="margin-bottom:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <button id="download-csv" class="download-btn">Download CSV</button>
+      <button id="clear-all" class="download-btn" style="background:#ff6b6b;color:#111">Clear All</button>
+      <label style="margin-left:8px;color:rgba(255,255,255,0.7)">Sort:</label>
+      <select id="sort-select" style="padding:6px;border-radius:6px;background:rgba(255,255,255,0.03);color:var(--white);border:none">
+        <option value="date_desc">Date ▼</option>
+        <option value="date_asc">Date ▲</option>
+        <option value="amount_desc">Amount ▼</option>
+        <option value="amount_asc">Amount ▲</option>
+        <option value="type_asc">Type A→Z</option>
+      </select>
+      <label style="margin-left:12px;color:rgba(255,255,255,0.7)">Page size:</label>
+      <select id="page-size" style="padding:6px;border-radius:6px;background:rgba(255,255,255,0.03);color:var(--white);border:none">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="25">25</option>
+      </select>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <button id="prev-page" class="download-btn">Prev</button>
+        <span id="page-indicator" style="color:rgba(255,255,255,0.8)">1</span>
+        <button id="next-page" class="download-btn">Next</button>
+      </div>
+    </div>
+
+    <div class="history-table-wrap">
+      <div id="history-meta" style="margin-bottom:8px;color:rgba(255,255,255,0.75)">Count: <span id="history-count">0</span></div>
+      <!-- Transposed grid: rows = EXPENSE / DATE / TYPE ; columns = most recent entries numbered 1..N -->
+      <div id="history-grid-wrap" style="overflow:auto">
+        <table id="history-grid" style="width:100%;border-collapse:collapse">
+          <!-- dynamically populated -->
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">&copy; Family Expense</div>
+  </footer>
+
+<script src="/script.js"></script>
+
+<script>
+  // ensure history grid renders on page load (script.js also triggers render on load)
+  window.addEventListener('load', function(){ if(window.renderHistory) window.renderHistory(); });
+</script>
+</body>
+</html>

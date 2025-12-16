@@ -1,0 +1,208 @@
+127.0.0.1 - - [15/Dec/2025 13:18:55] "GET /demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:18] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:18] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:19] code 404, message File not found
+127.0.0.1 - - [15/Dec/2025 13:19:19] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [15/Dec/2025 13:19:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:40] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:40] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:19:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:19:51] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:20:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:20:30] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:20:30] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:20:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:20:31] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:20:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:20:58] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:20:58] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:22:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:22:27] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:22:27] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:23:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:23:14] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:23:14] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:25:53] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:25:53] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:25:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:25:57] "GET /bg.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:25:57] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:13] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:13] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:13] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:19] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:19] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:26:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:26:21] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 59524)
+127.0.0.1 - - [15/Dec/2025 13:26:22] "GET / HTTP/1.1" 200 -
+Traceback (most recent call last):
+127.0.0.1 - - [15/Dec/2025 13:26:22] "GET /bg.css HTTP/1.1" 304 -
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [15/Dec/2025 13:27:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:27:13] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:27:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:27:47] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:27:47] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:28:05] "HEAD /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:28:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:28:37] "GET /bg.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:28:37] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:20] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:20] "GET /bg.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:22] "GET /bg.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:22] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:22] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:22] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:22] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:50] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:50] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:53] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:29:57] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:29:57] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:31:26] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [15/Dec/2025 13:31:26] "POST /submit HTTP/1.1" 501 -
+127.0.0.1 - - [15/Dec/2025 13:31:41] "GET /demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:31:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:31:42] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:31:42] "GET /bg.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:31:42] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:31:42] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:36:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:36:44] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:44] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:44] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:44] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:46] "GET /demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:36:47] "GET /demo.html HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:36:57] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:36:57] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:57] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:57] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:36:57] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:38:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:38:08] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:38:08] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:40:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 13:40:21] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:40:21] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:40:21] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 13:40:21] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 16:08:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 16:08:15] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 16:08:15] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 16:08:15] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 16:08:15] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 16:09:39] code 501, message Unsupported method ('POST')
+127.0.0.1 - - [15/Dec/2025 16:09:39] "POST /submit HTTP/1.1" 501 -
+127.0.0.1 - - [15/Dec/2025 19:03:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:03:42] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:03:42] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:03:42] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:03:42] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:47:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:47:50] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:47:50] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:47:50] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:47:50] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:48:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:48:14] "GET / HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 64992)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [15/Dec/2025 19:48:15] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:48:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:48:50] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:49:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:49:18] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:49:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:49:28] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:49:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:49:43] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:50:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:50:04] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:50:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:50:32] "GET /script.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:50:32] "GET /bg.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:50:32] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:50:32] "GET /bg.css HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:50:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:50:37] "GET /bg.js HTTP/1.1" 304 -
+127.0.0.1 - - [15/Dec/2025 19:51:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Dec/2025 19:51:02] "GET /bg.js HTTP/1.1" 304 -

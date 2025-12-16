@@ -29,9 +29,19 @@ export default function OAuth2Callback() {
             try {
               const accountInfo = await acc.get()
               const u = accountInfo || {}
-              setUser({ name: u.name || u.$id || u.displayName || u.email || '', email: u.email || '' })
+              const computedName = u.name || u.$id || u.displayName || u.email || ''
+              setUser({ name: computedName, email: u.email || '' })
+              try { localStorage.setItem('username', computedName) } catch (e) { /* ignore */ }
               setStatus('success')
-              return
+              // redirect to welcome page with username in navigation state
+              try {
+                navigate('/welcome', { state: { username: computedName }, replace: true })
+                return
+              } catch (e) {
+                // if navigate isn't available, just continue to render success UI
+                console.warn('navigate failed', e)
+                return
+              }
             } catch (err) {
               console.error('Appwrite account.get failed', err)
               // fall through to id_token handling
@@ -55,8 +65,16 @@ export default function OAuth2Callback() {
           // successful auth — show success message with client name
           // backend may return user or name/email directly; handle both
           const u = json.user || json || {}
-          setUser({ name: u.name || u.fullName || u.displayName || u.given_name || '', email: u.email || '' })
+          const computedName = u.name || u.fullName || u.displayName || u.given_name || ''
+          setUser({ name: computedName, email: u.email || '' })
           setStatus('success')
+          // redirect to welcome page with username in navigation state
+          try {
+            navigate('/welcome', { state: { username: computedName }, replace: true })
+            return
+          } catch (e) {
+            console.warn('navigate failed', e)
+          }
         } else {
           console.error('Auth failed', json)
           setErrorMsg(json?.message || 'Authentication failed')

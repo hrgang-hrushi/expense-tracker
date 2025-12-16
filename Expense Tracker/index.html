@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Expense Tracker </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="bg.css">
+</head>
+<body>
+  <div id="bg-root" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="left">EXPENSE TRACKER</div>
+      <div class="center">
+        <nav class="main-nav">
+          <a href="#" id="nav-home" class="nav-link">Home</a>
+          <a href="#" id="nav-tracker" class="nav-link">Tracker</a>
+        </nav>
+      </div>
+      <div class="right"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2 class="main-heading">Welcome TO <br> EXPENSE TRACKER </h2>
+      <p class="lead">ENTER THE EXPENSE, DATE OF THE EXPENSE & EXPENSE TYPE</p>
+    </section>
+
+    <section class="tracker">
+      <div class="form-wrap">
+        <form id="expense-form" class="form">
+            <div id="form-error" class="form-error" aria-live="polite" aria-hidden="true"></div>
+            <div class="row">
+              <label>EXPENSE :</label>
+              <input id="amount" name="amount" type="number" step="0.01" min="0" placeholder="" required />
+            </div>
+            <div class="row">
+              <label>DATE :</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+            <div class="row">
+              <label>TYPE :</label>
+              <div class="type-wrap">
+                <select id="type" name="type">
+                  <option value="food">Food</option>
+                  <option value="transport">Transport</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="bills">Bills</option>
+                  <option value="other">Other</option>
+                </select>
+                <input id="type-custom" name="type-custom" type="text" placeholder="Custom (only if Other)" style="display:none;margin-left:8px;width:140px" />
+              </div>
+            </div>
+          </form>
+
+          <!-- submit button positioned to the right-middle of the input grid -->
+          <div class="submit-wrap">
+            <button id="submit-btn" class="submit-btn" type="button">Add Expense</button>
+            <button id="scan-btn" class="submit-btn scan-btn" type="button">Scan Receipt</button>
+            <input id="scan-file" type="file" accept="image/*" style="display:none" />
+            <div id="sync-status" class="sync-status" aria-live="polite" aria-atomic="true" role="status" style="display:none;">&nbsp;</div>
+          </div>
+        </div>
+
+        <div id="scan-preview" class="scan-preview" aria-live="polite">
+          <img id="scan-img" src="" alt="Receipt preview" style="display:none" />
+          <div class="field"><label>Amount</label><div id="scan-amount">&nbsp;</div></div>
+          <div class="field"><label>Date</label><div id="scan-date">&nbsp;</div></div>
+          <div class="field"><label>Time</label><div id="scan-time">&nbsp;</div></div>
+          <div class="field"><label>Type</label><div id="scan-type">&nbsp;</div></div>
+          <div class="actions">
+            <button id="scan-confirm" class="submit-btn" type="button">Add Scanned</button>
+            <button id="scan-cancel" class="submit-btn scan-btn" type="button">Cancel</button>
+          </div>
+        </div>
+
+        <div class="recent">
+          <div class="recent-heading">RECENT EXPENSES</div>
+
+          <div class="recent-grid">
+            <div class="values">
+              <!-- Values populate here from JS table -->
+              <table id="expenses-table">
+                <thead style="display:none;"></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Expenses by month chart -->
+        <div class="chart-wrap">
+          <div class="chart-controls">
+            <label>View
+              <select id="chart-view">
+                <option value="year">Year (Jan–Dec)</option>
+                <option value="month">Month (days)</option>
+                <option value="lifetime">Lifetime (years)</option>
+              </select>
+            </label>
+            <label id="label-year">Year
+              <select id="chart-year"></select>
+            </label>
+            <label id="label-month" style="display:none">Month
+              <select id="chart-month"></select>
+            </label>
+          </div>
+          <h4 class="recent-heading">Expenses</h4>
+          <canvas id="expenses-chart" aria-label="Expenses by month" role="img"></canvas>
+        </div>
+      </section>
+
+    <!-- History table: lists all saved expenses with actions -->
+    <section id="history-section" class="history container">
+      <h3 class="history-heading">Expense History</h3>
+      <p class="lead" style="margin-top:0;">All saved expenses (local + submitted)</p>
+      <div class="history-table-wrap">
+        <table id="history-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+  <!-- Paste your Apps Script Web App URL below so the client will POST new entries to the sheet.
+       Example: window.SHEET_ENDPOINT = 'https://script.google.com/macros/s/XXXXX/exec'; -->
+  <script>
+    // Apps Script web app endpoint (deployed by you)
+    window.SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbztG2RaX9wMLwVHgjMo09wJvcGXK-2c0xUiw_SB0cRJywKxk55mFLKR8OOWecp-8SGQ/exec';
+  </script>
+  <!-- Tesseract.js for browser OCR -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+  <!-- Chart.js for expenses by month -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- three.js and background shader -->
+  <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+  <script src="bg.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

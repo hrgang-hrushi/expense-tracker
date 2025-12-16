@@ -1,64 +1,55 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
+import { startGoogleAuth } from '../lib/oauth'
 
-export default function GoogleAuthButton({ onSuccess }) {
-  const ref = useRef(null)
-  const [clientId] = useState(import.meta.env.VITE_GOOGLE_CLIENT_ID || '')
-  const API_BASE = import.meta.env.VITE_API_BASE || ''
+export default function GoogleAuthButton({ className, children }) {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [flow, setFlow] = useState('')
 
-  useEffect(() => {
-    if (!clientId) return
-
-    const handleResponse = async (resp) => {
-      try {
-        const r = await fetch(`${API_BASE}/api/auth/google`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id_token: resp.credential }),
-        })
-        const json = await r.json()
-        if (r.ok) {
-          onSuccess && onSuccess(json.account || json)
-          // don't alert loudly in production; for dev it's OK
-          alert('Welcome ' + (json.account?.fullName || json.account?.email || ''))
-        } else {
-          console.error('Google auth failed', json)
-          alert('Sign-in failed')
-        }
-      } catch (err) {
-        console.error(err)
-        alert('Sign-in error')
+  async function handleClick() {
+    setError('')
+    setLoading(true)
+    try {
+      // startGoogleAuth returns true when a redirect was initiated
+      const ok = await startGoogleAuth()
+      // If ok === true, we expect the browser to navigate away.
+      if (ok) {
+        setFlow('redirecting')
+        // leave loading true briefly — redirect will occur
+        return
       }
-    }
 
-    const init = () => {
-      if (!window.google || !window.google.accounts || !window.google.accounts.id) return
-      window.google.accounts.id.initialize({ client_id: clientId, callback: handleResponse })
-      try { window.google.accounts.id.renderButton(ref.current, { theme: 'outline', size: 'large' }) } catch (e) {}
+      // not configured or failed to redirect - show helpful message
+      setError('No OAuth redirect was initiated. Check Appwrite/Google configuration or set VITE_GOOGLE_CLIENT_ID in .env.')
+      setLoading(false)
+    } catch (err) {
+      console.error('startGoogleAuth error', err)
+      setError(err?.message || String(err) || 'Unknown error starting auth')
+      setLoading(false)
     }
-
-    if (window.google && window.google.accounts && window.google.accounts.id) init()
-    else {
-      const s = document.getElementById('google-identity')
-      if (s) s.onload = init
-      else {
-        const script = document.createElement('script')
-        script.id = 'google-identity'
-        script.src = 'https://accounts.google.com/gsi/client'
-        script.async = true
-        script.defer = true
-        script.onload = init
-        document.head.appendChild(script)
-      }
-    }
-  }, [clientId])
-
-  if (!clientId) {
-    return (
-      <button className="auth-btn" style={{ padding: 12, borderRadius: 10, background: '#f5f5f5' }}>
-        Continue with Google
-      </button>
-    )
   }
 
-  return <div ref={ref} />
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <button
+        className={className || 'auth-btn'}
+        onClick={handleClick}
+        disabled={loading}
+        style={{ padding: '12px 22px', fontSize: 16, opacity: loading ? 0.8 : 1 }}
+      >
+        {loading ? (flow === 'redirecting' ? 'Redirecting…' : 'Starting sign in…') : (children || 'Continue with Google')}
+      </button>
+
+      {error && (
+        <div style={{ marginTop: 12, color: '#ffdede', background: 'rgba(255,0,0,0.06)', padding: 10, borderRadius: 8 }}>
+          <strong style={{ display: 'block', marginBottom: 6 }}>Sign-in did not start</strong>
+          <div style={{ fontSize: 13 }}>{error}</div>
+          <div style={{ marginTop: 8, fontSize: 13 }}>
+            Try the <a href="/debug">debug page</a> for raw OAuth URLs and check DevTools for network/console errors.
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }
+

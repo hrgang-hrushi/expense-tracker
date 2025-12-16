@@ -55,12 +55,21 @@ export default function App() {
     <NotificationProvider>
       <div className="app-root">
         <header className="header">
-          <h1>DMV Notifier</h1>
-          <LocationPicker
-            zip={zip}
-            onZipChange={setZip}
-            onSearch={() => setSearchZip(zip)}
-          />
+          <div className="topbar">
+            <h1 className="brand">DMV Notifier</h1>
+            <LocationPicker
+              zip={zip}
+              onZipChange={setZip}
+              onSearch={() => setSearchZip(zip)}
+            />
+          </div>
+
+          <div className="suggestions">
+            <div className="suggestion">🚗<span>Ride</span></div>
+            <div className="suggestion">📦<span>Package</span></div>
+            <div className="suggestion">🔁<span>Rentals</span></div>
+            <div className="suggestion">📅<span>Reserve</span></div>
+          </div>
         </header>
 
         <main>
