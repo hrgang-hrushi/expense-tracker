@@ -25,7 +25,7 @@ body{
 	background:var(--bg);
 }
 
-.container{max-width:1200px;margin:0 auto;padding:18px}
+.container{max-width:1200px;margin:0 auto;padding:18px;position:relative;z-index:1}
 
 /* Header: left small title, centered HOME */
 .site-header{padding:8px 0}

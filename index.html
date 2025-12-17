@@ -148,5 +148,23 @@
   <!-- Chart.js for expenses by month -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="script.js"></script>
+  <!-- ClickSpark effect -->
+  <script src="click-spark.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var target = document.querySelector('main.container');
+      if (target && window.ClickSpark) {
+        window.ClickSpark.attach(target, {
+          sparkColor: '#fff',
+          sparkSize: 10,
+          sparkRadius: 15,
+          sparkCount: 8,
+          duration: 400,
+          easing: 'ease-out',
+          extraScale: 1.0
+        });
+      }
+    });
+  </script>
 </body>
 </html>

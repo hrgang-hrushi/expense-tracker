@@ -7,9 +7,9 @@
   z-index:0;
   pointer-events:none; /* let page interactions pass through */
   /* fallback gradient (visible if shader fails) */
-  background: radial-gradient(1200px 600px at 10% 20%, rgba(255, 255, 255, 0.08), transparent 20%),
-              radial-gradient(900px 500px at 80% 80%, rgba(59, 53, 53, 0.716), transparent 18%),
-              linear-gradient(180deg, rgba(48, 44, 44, 0.6), rgba(81, 76, 76, 0.6));
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(246, 244, 250, 0.08), transparent 20%),
+              radial-gradient(900px 500px at 80% 80%, rgba(35, 35, 36, 0.85), transparent 18%),
+              linear-gradient(180deg, rgba(35, 35, 36, 0.9), rgba(35, 35, 36, 0.9));
 }
 
 /* Ensure main content sits above the shader */
